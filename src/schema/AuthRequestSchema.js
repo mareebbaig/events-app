@@ -29,6 +29,13 @@ module.exports = function AuthRequestSchema(opts) {
             handler: authRequestHandlers.getEventData,
         };
     };
+    const getCityEvents = () => {
+        return {
+            method: "GET",
+            url: "/getCityEvents",
+            handler: authRequestHandlers.getCityEvents,
+        }
+    }
 
     const reqtest = () => {
         return {
@@ -41,6 +48,7 @@ module.exports = function AuthRequestSchema(opts) {
     return {
         getRandomEvents,
         reqtest,
-        getEventData
+        getEventData,
+        getCityEvents
     };
 };

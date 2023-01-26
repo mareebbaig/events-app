@@ -20,13 +20,16 @@ module.exports = function SvcTalos(opts) {
      
        return result;
     }
+    async function getCityEvents(id){
+        const result = await db['primary'].any(mdlTest.getCityEvents, {destination_id: id,})
+        return result;
+    }
     return {
         getFromDB,
         getRandomEvents,
-        getEventData
+        getEventData,
+        getCityEvents,
     }
-
-
     return {
         getFromDB,
     }

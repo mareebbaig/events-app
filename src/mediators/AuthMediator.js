@@ -24,11 +24,15 @@ module.exports = function AuthMediator(opts) {
         result = await svcTalos.getEventData(id);
         return result;
     }
-
+    async function getCityEvents(id){
+        result = await svcTalos.getCityEvents(id);
+        return result;
+    }
 
     return {
         getRandomEvents,
         getEventData,
+        getCityEvents,
         test
     }
 }
